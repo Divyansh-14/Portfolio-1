@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-6</title>
+    <script>
+        function clickme(){
+            const a= document.getElementById('a').value;
+            const b= document.getElementById('b').value;
+            document.getElementById('c').innerHTML = 'Welcome Mr. '+a;
+            document.getElementById('d').innerHTML = 'You are '+b +' year old';
+            var g = document.getElementById('e');
+            g.reset()
+        }
+    </script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="/Namaste-PNG-Free-Download.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            <b> Welcome </b>
+          </a>
+        </div>
+      </nav>
+
+      <div class="container text-center" style="margin-top: 50px;">
+        <div class="row">
+          <div class="col">
+
+          </div>
+          <div class="col-md-6" style="background-color: rgb(126, 154, 255);">
+            <p><u>Enter your Details</u></p>
+             Name : <input type="text" placeholder="Enter your name" id="a"><br>
+             Age : <input type="text" placeholder="Enter your Age" id="b"><br>
+
+            <button type="button" class="btn btn-light" onclick="clickme()">Agree</button>
+            <button type="button" class="btn btn-light" onclick="clickme()">Disagree</button>
+            <h3 id="c"></h3>
+            <h4 id="d"></h4>
+
+          </div>
+          <div class="col">
+            
+          </div>
+        </div>
+      </div>
+</body>
+</html>

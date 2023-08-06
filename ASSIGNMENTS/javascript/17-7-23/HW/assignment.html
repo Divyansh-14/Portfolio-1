@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>People Information</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ece0e0;
+    }
+  </style>
+</head>
+<body>
+  <h1>People Information</h1>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody id="peopleTable">
+    </tbody>
+  </table>
+
+  <div id="buttons">
+    <button onclick="filterByAge(20)">20&lt;</button>
+    <button onclick="filterByAge(21, 25)">21-25</button>
+    <button onclick="filterByAge(26, 30)">26-30</button>
+  </div>
+
+  <script>
+    var people = [
+      { name: "John", age: 25 },
+      { name: "Sarah", age: 30 },
+      { name: "Michael", age: 35 },
+      { name: "Emily", age: 28 },
+      { name: "David", age: 32 },
+      { name: "Jessica", age: 27 },
+      { name: "Daniel", age: 29 },
+      { name: "Olivia", age: 31 },
+      { name: "Matthew", age: 26 },
+      { name: "Emma", age: 33 }
+    ];
+
+    function displayPeople(peopleToDisplay) {
+      var tableBody = document.getElementById('peopleTable');
+
+      // Clear existing table rows
+      tableBody.innerHTML = '';
+
+      // Generate table rows for each person
+      peopleToDisplay.forEach(function(person) {
+        var row = document.createElement('tr');
+        var nameCell = document.createElement('td');
+        var ageCell = document.createElement('td');
+
+        nameCell.textContent = person.name;
+        ageCell.textContent = person.age;
+
+        row.appendChild(nameCell);
+        row.appendChild(ageCell);
+
+        tableBody.appendChild(row);
+      });
+    }
+
+    
+
+    function filterByAge(minAge, maxAge) {
+      var filteredPeople = [];
+
+      if (maxAge === undefined) {
+        // Filter for ages greater than minAge
+        filteredPeople = people.filter(function(person) {
+          return person.age > minAge;
+        });
+      } else {
+        // Filter for ages between minAge and maxAge
+        filteredPeople = people.filter(function(person) {
+          return person.age >= minAge && person.age <= maxAge;
+        });
+      }
+
+      displayPeople(filteredPeople);
+    }
+
+    // Display all people on page load
+    displayPeople(people);
+  </script>
+</body>
+</html>

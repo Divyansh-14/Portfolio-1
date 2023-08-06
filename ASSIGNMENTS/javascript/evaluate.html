@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function clickme(){
+        const value= document.getElementById('value').value;
+        const result=eval(value);
+        document.getElementById("h3").innerHTML = "Result: " + result;
+    }
+    </script>
+    
+</head>
+<body>
+    
+    <input type="text"  id="value" placeholder="Enter expression" required>
+ 
+    <button onclick="clickme()">Solve</button>
+    
+    <h3 id="h3"></h3>
+</body>
+</html>
